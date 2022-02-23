@@ -75,11 +75,14 @@ namespace Series
             int entradaAno = int.Parse(Console.ReadLine());
             Console.Write("Digite a Descrição da série");
             string entradaDescricao = Console.ReadLine();
+            Console.Write("Digite o Autor da série");
+            string entradaAutor = Console.ReadLine();
 
             Serie atualizaSerie = new Serie(id: indiceSerie,
                                         genero: (Genero)entradaGenero,
                                         titulo: entradaTitulo,
                                         ano: entradaAno,
+                                        autor: entradaAutor,
                                         descricao: entradaDescricao);
             repositorio.Atualiza(indiceSerie, atualizaSerie);
         }
@@ -121,11 +124,14 @@ namespace Series
 
             Console.Write("Digite a Descrição da série");
             string entradaDescricao = Console.ReadLine();
+            Console.Write("Digite o Autor da série");
+            string entradaAutor = Console.ReadLine();
 
             Serie novaSerie = new Serie(id: repositorio.ProximoId(),
                                         genero: (Genero)entradaGenero,
                                         titulo: entradaTitulo,
                                         ano: entradaAno,
+                                        autor: entradaAutor,
                                         descricao: entradaDescricao);
             repositorio.Insere(novaSerie);
         }
